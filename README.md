@@ -80,9 +80,9 @@ By the final review, this README should clearly show:
 
 ## 1.5 Expanded Project Idea
 
-`The Smart Blind Stick is an embedded systems project developed to assist visually impaired individuals in navigating their surroundings safely and independently. The system uses multiple sensors such as ultrasonic and IR sensors to detect nearby obstacles, pits, or stairs and alert the user through buzzer or vibration feedback.
+The Smart Blind Stick is an embedded systems project developed to assist visually impaired individuals in navigating their surroundings safely and independently. The system uses multiple sensors such as ultrasonic and IR sensors to detect nearby obstacles, pits, or stairs and alert the user through buzzer or vibration feedback.
 
-The project combines embedded electronics, sensor integration, and wireless communication technologies to create a safer mobility solution. Additional features like emergency alert triggering and Bluetooth-based communication enhance the usability of the stick. The aim of the project is to provide an affordable, practical, and user-friendly assistive device using modern embedded system concepts.`
+The project combines embedded electronics, sensor integration, and wireless communication technologies to create a safer mobility solution. Additional features like emergency alert triggering and Bluetooth-based communication enhance the usability of the stick. The aim of the project is to provide an affordable, practical, and user-friendly assistive device using modern embedded system concepts.
 
 ---
 
@@ -102,7 +102,9 @@ List what inspired the project.
 
 What makes your project original?
 
-**Response:**  
+The uniqueness of this project comes from its simple and practical design. Instead of connecting the stick directly to the internet, it uses Bluetooth to communicate with a smartphone, which reduces complexity and power usage. The project combines multiple features such as obstacle detection using both IR and ultrasonic sensors, a touch-based SOS system for emergencies, and location sharing through a mobile phone.
+
+It also includes a temperature and humidity sensor, which can be useful for future improvements. Overall, the project stands out because it provides multiple safety features in a cost-effective and easy-to-use system.
 
 
 ---
@@ -111,12 +113,13 @@ What makes your project original?
 
 ## 3.1 User Journey 
 
-Describe exactly how a user will use the project.Make it a story
-**Response:**  
+A visually impaired person uses the smart blind stick while walking outside. As they move, the stick continuously checks for obstacles using its sensors. If something comes in the way, the system detects it and alerts the user through a buzzing sound, helping them avoid collisions.
 
-                                                  |
+The user does not need to do anything manually during normal use, as the system works automatically in the background. This makes walking safer and more comfortable.
 
+If the user feels unsafe or needs help, they can press the touch sensor on the stick. This sends an emergency signal to their smartphone through Bluetooth. The phone then gets the user’s current location and sends it to family members or caregivers.
 
+The stick acts as a reliable support system for daily use and emergencies. 
 
 ---
 
@@ -124,21 +127,26 @@ Describe exactly how a user will use the project.Make it a story
 
 ## 4.1 Definition of “Usable”
 
-
+The project is considered successful if it can detect obstacles correctly, send alerts to the smartphone without delay, and successfully deliver emergency messages. It should also be easy to use, lightweight, and reliable in real-world conditions.
 
 ## 4.2 Minimum Usable Version
 
 What is the smallest version of this project that still delivers the core experience?
 
-**Response:**  
+The minimum version of this project includes a Raspberry Pi, an ultrasonic sensor for obstacle detection, and a touch sensor for SOS. The system should be able to detect obstacles and send an emergency alert to a smartphone using Bluetooth. This basic setup is enough to provide the main safety feature.
 
 
 ## 4.3 Stretch Features
 
 What features are nice to have but not essential?
 
-
----
+1) Creating a custom mobile app instead of using messaging apps
+2) Using a camera for object detection
+3) Adding voice guidance for better navigation
+4) Using a more accurate sensor instead of DHT11
+5) Adding a GPS module directly to the stick
+6) Detecting falls using motion sensors
+7) Storing data for tracking and analysis
 
 # 5. System Overview
 
@@ -152,19 +160,19 @@ Check all that apply.
 
 - [x] Sensor-based
 
-- [x] App-connected
+- [ ] App-connected
 
-- [x] Motorized
+- [ ] Motorized
 
-- [ ] Sound-based
+- [x] Sound-based
 
-- [x] Light-based
+- [ ] Light-based
 
 - [x] Screen/UI-based
 
 - [x] Fabricated structure
 
-- [x] Game logic based
+- [ ] Game logic based
 
 - [x] Installation
 
