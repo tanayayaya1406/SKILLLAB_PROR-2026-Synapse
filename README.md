@@ -57,37 +57,32 @@ By the final review, this README should clearly show:
 
 ## 1.1 Studio / Group Name
 
-`Project^2`
+`Synapse`
 
 ## 1.2 Team Members
 
 | Name                  | Primary Role                    | Secondary Role   | Strengths Brought to the Project |
 | --------------        | ------------------------------- | --------------   | -------------------------------- |
-| `Mrugendra Vasmatkar` | `[Electronics / Coding / App ]` | `Documentation`  | `Documentation, Gift of Gab `|
-| `Jyoti Bagate`        | `[Electronics / Fabrication]`   | `[Coding]`       | `Material Handling, Hardware`    |
+| `Tanaya Balki`        | `[Electronics / Coding / App ]` | `Documentation`  | `Documentation,Raspberry Pi `|
+| `Tushar Parmar`       | `[Electronics / Fabrication]`   | `[Coding]`       | `Material Handling, Hardware`    |
+| `Om Rajbhar`          | `[Electronics / Fabrication]`   | `[Coding]`       | `Material Handling, Hardware`    |
+| `Siddhai Thalkar`     | `[Electronics / Fabrication]`   | `[Coding]`       | `Material Handling, Hardware`    |
 
 ## 1.3 Project Title
 
-`"Project Project"`
-
-`(because Project-or)`
+`"Smart Blind Stick"`
 
 <img width="1600" height="1131" alt="image" src="https://github.com/user-attachments/assets/c64bfbd4-b3b7-43d9-83ad-c203a5aa11bc" />
 
 ## 1.4 One-Line Pitch
 
-`A projected, fully customizable time portal where engineering education is done through PUBG battlefield in the comfort of our home`
+`An embedded assistive system designed to help visually impaired individuals navigate safely using smart sensor technology`
 
 ## 1.5 Expanded Project Idea
 
-In 1–2 paragraphs, explain:
+`The Smart Blind Stick is an embedded systems project developed to assist visually impaired individuals in navigating their surroundings safely and independently. The system uses multiple sensors such as ultrasonic and IR sensors to detect nearby obstacles, pits, or stairs and alert the user through buzzer or vibration feedback.
 
-- what your project is,
-- what kind of experience it creates,
-- what technologies are involved.
-
-**Response:**  
-`A projected and fully customizable time portal can transform engineering education into an immersive PUBG-style battlefield experience from the comfort of home. In this environment, students can learn engineering concepts by entering a virtual battlefield where challenges, obstacles, and missions are designed around real technical problems. Instead of passively studying theory, learners actively apply concepts such as electronics, coding, sensors, robotics, mechanics, and system design to complete missions, solve problems, and progress through different levels. This approach makes engineering education more interactive, engaging, and practical by combining gaming, simulation, and hands-on problem-solving in a familiar and exciting format.`
+The project combines embedded electronics, sensor integration, and wireless communication technologies to create a safer mobility solution. Additional features like emergency alert triggering and Bluetooth-based communication enhance the usability of the stick. The aim of the project is to provide an affordable, practical, and user-friendly assistive device using modern embedded system concepts.`
 
 ---
 
@@ -99,7 +94,7 @@ List what inspired the project.
 
 | Source Type | Title / Link                                                        | What Inspired You                                                                         |
 | ----------- | ------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `[Video]`   | `https://www.instagram.com/reel/DW4CT7WCDry/?igsh=cXg3dzAxYmdncDBo` | `How projection mapping can be used to create interactive digital + physical experiences` |
+| `[Video]`   | `https://www.instagram.com/reel/DSVh31YE3gc/?igsh=Y2xtbG96aXF4dHYz` | `Understanding how technology can create interactive and practical real-world assistance systems` |
 |             |                                                                     |                                                                                           |
 |             |                                                                     |                                                                                           |
 
