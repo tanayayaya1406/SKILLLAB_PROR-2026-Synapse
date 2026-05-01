@@ -462,7 +462,7 @@ Expected outcomes:
 - [x] Sketches made
 - [x] BOM completed
 - [x] Purchase needs identified
-- [ ] Key uncertainty identified
+- [x] Key uncertainty identified
 - [x] Basic feasibility tested
 
 ### Bi Hour 2 — Build Subsystems
@@ -470,7 +470,7 @@ Expected outcomes:
 Expected outcomes:
 
 - [x] Electronics tests completed
-- [ ] CAD / structure planning completed
+- [x] CAD / structure planning completed
 - [ ] App UI started if needed
 - [x] Mechanical concept tested
 - [x] Main subsystems partially working
@@ -479,7 +479,7 @@ Expected outcomes:
 
 Expected outcomes:
 
-- [x] Physical body built
+- [ ] Physical body built
 - [x] Electronics integrated
 - [x] Code connected to hardware
 - [ ] App connected if required
@@ -492,17 +492,19 @@ Expected outcomes:
 - [x] Technical bugs reduced
 - [x] Playtesting completed
 - [x] Improvements made
-- [x] Documentation completed
+- [ ] Documentation completed
 - [x] Final build ready
 
 ## 12.2  Update Log
 
-| Days   | Planned Goal   | What Actually Happened | What Changed   | Next Steps     |
-| ------ | -------------- | ---------------------- | -------------- | -------------- |
-| Day 1 | `[Write here]` | `[Write here]`         | `[Write here]` | `[Write here]` |
-| Day 2 | `[Write here]` | `[Write here]`         | `[Write here]` | `[Write here]` |
-| Day 3 | `[Write here]` | `[Write here]`         | `[Write here]` | `[Write here]` |
-| Day 4 | `[Write here]` | `[Write here]`         | `[Write here]` | `[Write here]` |
+| Days  | Planned Goal                          | What Actually Happened                                  | What Changed                                  | Next Steps                              |
+|-------|---------------------------------------|----------------------------------------------------------|-----------------------------------------------|------------------------------------------|
+| Day 1 | Finalize idea and components          | Idea finalized, sensors identified                       |Added temperature sensor        | Start sensor testing                     |
+| Day 1 | Sensor interfacing                    | Ultrasonic, IR, touch sensors tested                     | Added buzzer for feedback                      | Begin Bluetooth setup                    |
+| Day 1 | Integration                          | Sensors + buzzer + Bluetooth working together            | Focus shifted to SOS-only messaging            | Test full system                         |
+| Day 1 | Testing             | System tested, documentation started          | Simplified messaging     | Continued with documentation           |
+
+
 
 ---
 
@@ -510,16 +512,18 @@ Expected outcomes:
 
 ## 13.1 Risk Register
 
-| Risk                                                            | Type         | Likelihood | Impact   | Mitigation Plan                                                                       | Owner                |
-| --------------------------------------------------------------- | ------------ | ---------- | -------- | ------------------------------------------------------------------------------------- | -------------------- |
-| WiFi connection between laptop and ESP32 becomes unstable       | `Technical`  | `Medium`   | `High`   | Keep ESP32 close, ensure stable power supply, reduce network load, add fail-safe stop | `[Gopal]`           |
+| Risk                                                | Type        | Likelihood | Impact | Mitigation Plan                                                                 | Owner   |
+|-----------------------------------------------------|------------|------------|--------|----------------------------------------------------------------------------------|---------|     
+| Power supply issues                                | Hardware   | Medium     | High   | Use stable battery, check voltage regularly                                     | Tushar  |
+| Delay in SOS message delivery                      | System     | Low        | High   | Optimize Bluetooth communication and message trigger                            | Tushar |
+| Loose connections or hardware failure              | Hardware   | Medium     | Medium | Proper wiring, secure mounting                                                  | Om      |         
 
 
 ## 13.2 Biggest Unknown Right Now
 
 What is the single biggest uncertainty in your project at this stage?
 
-**Response:**  
+The biggest uncertainty in the project is the reliability of Bluetooth communication in real-world conditions. Factors like signal range, interference, and device compatibility can affect how quickly and consistently the SOS message is transmitted. Further testing is required to ensure stable performance. 
 
 
 ---
