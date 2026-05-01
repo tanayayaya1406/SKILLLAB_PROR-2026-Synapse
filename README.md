@@ -352,46 +352,58 @@ Suggested sequence:
 
 ## 9.1 Full BOM
 
-| Item                             | Quantity | In Kit? | Need to Buy? | Estimated Cost | Material / Spec               | Why This Choice?          |
-| -------------------------------- | --------:| ------- | ------------ | --------------:| ----------------------------- | ------------------------- |
-| `[RASPI]`                        | `1`      | `Yes`   | `No`         | `0`            | `38 Pin ESP32`                | `[To control components]` |
-| `[Motor Driver]`                 | `[1]`    | `[Yes]` | `[No]`       | `0`            | `[LN296]`                     | `[To drive both motors]`  |
-| `[DC Motors and wheel]`          | `[2]`    | `[No]`  | `[Yes]`      | `[150]`        | `[BO Motors and 6 cm wheels]` | `[high torque motors]`    |
-| `[Buck Converter]`               | `[1]`    | `[No]`  | `[Yes]`      | `[75]`         |                               |                           |
-| `[Li-ion batteries with holder]` | `[1]`    | `[No]`  | `[Yes]`      | `[200]`        |                               |                           |
+| Item | Quantity | In Kit? | Need to Buy? | Estimated Cost (₹) | Material / Spec | Why This Choice? |
+|------|----------|---------|--------------|--------------------|------------------|------------------|
+| Raspberry Pi | 1 | Yes | No | 0 | Model with Bluetooth support | Main controller to process sensor data |
+| Ultrasonic Sensor | 1 | Yes | No | 0 | 2–400 cm range | Detects obstacles at a distance |
+| IR Sensor | 1 | Yes | No | 0 | Infrared proximity sensor | Detects very close obstacles |
+| Touch Sensor | 1 | Yes | No | 0 | Capacitive touch module | Easy SOS trigger for user |
+| DHT11 Sensor | 1 | Yes | No | 0 | Temp & humidity sensor | Environmental monitoring |
+| Buzzer | 1 | No | No | 0 | 5V module | Alerts user when obstacle detected |
+| Bluetooth Module  | 1 | Yes | No | 0 | HC-05 | For communication  |
+| Battery Pack | 1 | No | Yes | 200 | Power bank / Li-ion | Portable power supply |
+| Connecting Wires | Multiple | Yes | No | 0 | Jumper wires | Circuit connections |
+| Stick Structure | 1 | No | No | 0 | PVC / metal rod | Physical support |
 
 ## 9.2 Material Justification
 
 Explain why you selected your main materials and components.
 
 **Response:**  
-`DC motors (BO motors) were chosen instead of servos or steppers because the system requires continuous rotation for movement rather than precise angular control (Previously, we were considering using steppers as we were planning on tracking movement on the ESP using its relative position from an origin, but since we're using a camera now, this is not required). A motor driver (L298N) was used to allow bidirectional control and speed variation using PWM.`
+The Raspberry Pi is used because it can handle multiple sensors and supports Bluetooth communication.  
+The ultrasonic sensor is used for long-range obstacle detection, while the IR sensor detects nearby objects. This combination improves accuracy.  
+The touch sensor is easy to use and allows quick SOS triggering.  
+The buzzer or vibration motor gives immediate feedback to the user.  
+The DHT11 sensor is added for environmental monitoring and future improvements.  
+A battery pack is used to make the system portable.
 
 
 ## 9.3 Items You chose
 
-| Item                 | Why Needed               | Purchase Link | Latest Safe Date to Procure | Status       |
-| -------------------- | ------------------------ | ------------- | --------------------------- | ------------ |
-| `BO Motors + Wheels` | `Drive system for car`   | `robu.in`     | `15th April`                | `[Received]` |
-| `Buck Converter`     | `Stable power for ESP32` | `local store` | `before testing`            | `[Received]` |
-| `Li-ion Batteries`   | `Portable power`         | `local store` | `before testing`            | `Recieved`   |
+ Item | Why Needed | Purchase Source | Latest Safe Date | Status |
+|------|------------|----------------|------------------|--------|
+| Ultrasonic Sensor | Detect obstacles at a distance | Already available | Before testing | Received |
+| DHT11 Sensor | Measure temperature and humidity | Already available | Before testing | Received |
+| Buzzer / Vibration Motor | To alert user | Already available | Before testing | Received |
+| Battery Pack | Power supply | Local store | Before final assembly | Received |
+| Stick Structure | Mounting components | Already available | Before integration | Received |
 
 ## 9.4 Budget Summary
 
-| Budget Item           | Estimated Cost              |
-| --------------------- | ---------------------------:|
-| Electronics           | `[400]`                     |
-| Mechanical parts      | `[200]`                     |
-| Fabrication materials | `[0 (Available on campus)]` |
-| Purchased extras      | `[0]`                       |
-| Contingency           | `[300]`                     |
-| **Total**             | `[900]`                     |
+ Budget Item | Estimated Cost (₹) |
+|-------------|--------------------|
+| Electronics | 0 |
+| Mechanical parts | 0 |
+| Fabrication materials | 0 |
+| Purchased extras | 0 |
+| Contingency | 0 |
+| **Total** | **0** |
 
 ## 9.5 Budget Reflection
 
 If your cost is too high, what can be simplified, removed, substituted, or shared?
 
-**Response:**  
+The project is low cost and affordable.  
 
 ---
 
@@ -414,9 +426,14 @@ Include:
 
 ## 10.2 Task Breakdown
 
-| Task ID | Task                    | Owner    | Estimated Hours | Deadline     | Dependency | Status |
-| ------- | ----------------------- | -------- | ---------------:| ------------ | ---------- | ------ |
-| T1      | `[Finalize concept]`    | `[Both]` | `2`             | `1st April`  | `None`     | `Done` |
+| Task ID | Task | Owner | Estimated Time | Deadline | Dependency | Status |
+|--------|------|--------|-----------------|----------|------------|--------|
+| T1 | Finalize concept | All | 15 mins| 30th April| None | Done |
+| T2 | Collect components | All | 15 mins | 30th April | T1 | Done |
+| T3 | Sensor interfacing | Om and Tushar | 2.5 hours | 30th April | T2 | Done |
+| T4 | System integration | All| 1 hour | 30th April | T3 | Done |
+| T5 | Testing & debugging | Om and Tushar | 30 mins | 1th May | T4 | Done |
+| T6 | Documentation | Tanaya and Siddhai | 5 | 1th May | Ongoing | Ongoing |
 
 
 ## 10.3 Responsibility Split
