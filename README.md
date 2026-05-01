@@ -268,24 +268,21 @@ Add a sketch with labels showing:
 
 | Component                 | Quantity | Purpose                               |
 | ------------------------- | --------:| ------------------------------------- |
-| `[Raspi/FPGA]`                 | `1`      | `[Main controller]`                   |
-| `[L298N Motor Driver]`    | `1`      | `[Control Motors]`                    |
-| `[BO Motors]`             | `2`      | `[Rotate wheels]`                     |
-| `[Buck Converter]`        | `1`      | `[Power ESP32]`                       |
-| `[Li Ion Battery Pack]`   | `2`      | `[Power]`                             |
-| `[Projector]`             | `1`      | `[Display obstacles]`                 |
-| `Camera (Webcam / Phone)` | `1`      | `[Tracks car position using markers]` |
+| Raspberry Pi | `1` | Main processing and control unit |
+| Ultrasonic Sensor (HC-SR04) | `1` | Detects nearby obstacles |
+| IR Sensor | `1` | Detects pits, stairs, or holes | 
+| DHT11 Sensor | `1` | Measures environmental temperature | 
+| Touch Sensor | `1` | Triggers emergency alert | 
+| Bluetooth Module (HC-05) | `1` | Sends alerts to connected device |
+| Buzzer / Vibration Motor | `1` | Provides warning alerts to user | 
+| Battery Pack | `1` | Powers the complete system | 
+| Jumper Wires | `Multiple` | Electrical connections between components |
 
 ## 7.2 Wiring Plan
 
-Describe the main electrical connections.
+The Raspberry Pi acts as the central controller and is connected to all sensors and output devices through GPIO pins. The ultrasonic sensor is connected for obstacle detection using trigger and echo pins. The IR sensor is connected to detect pits, stairs, or sudden ground changes. The DHT11 sensor is connected to monitor environmental conditions, while the touch sensor is used to activate emergency alerts manually. The buzzer or vibration motor is connected to output pins to provide warning feedback to the user whenever danger is detected. The Bluetooth module is connected through UART communication pins to send emergency notifications or alerts to a connected mobile device. 
 
-**sample Response:**  
-`The RASPI is connected to the motor driver (L298N) using four GPIO pins (18,19; 22,23) to control motor direction (IN1, IN2, IN3, IN4). Two PWM-capable pins (ENA and ENB; 25 and 26) are connected to control the speed of each motor.
-
-The motors are connected to the output terminals of the motor driver. The motor driver is powered directly by the battery pack (higher voltage), while the ESP32 receives regulated 5V from the buck converter.
-
-All components share a common ground to ensure stable operation. The projector and camera are connected to the laptop, which handles tracking and game logic separately.`
+---
 
 ## 7.3 Circuit Diagram/architecture diagram
 
@@ -300,11 +297,10 @@ Insert a hand-drawn or software-made circuit diagram.
 
 | Question         | Response                                                                                                                                          |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Power source     | `Battery (Li-ion pack)`                                                                                                                           |
-| Voltage required | `~6–8.4V for motors (via driver), stepped down to 5V for ESP32 (buck converter)`                                                                  |
-| Current concerns | `Motors can draw high current under load, which may cause voltage drops affecting ESP32 and WiFi stability`                                       |
-| Safety concerns  | `Avoid over-discharging Li-ion batteries, ensure proper voltage regulation, prevent short circuits, and secure wiring to avoid loose connections` |
-
+| Power Source |  |
+| Voltage Required | `5V for Raspberry Pi and sensors` |
+| Current Concerns | `Continuous sensor operation and Bluetooth communication may increase power consumption` |
+| Safety Concerns | `Avoid short circuits, ensure proper insulation, and use regulated power supply connections` |
 ---
 
 # 8. Software Planning/
@@ -313,43 +309,23 @@ Insert a hand-drawn or software-made circuit diagram.
 
 | Tool / Platform                | Purpose                                        |
 | ------------------------------ | ---------------------------------------------- |
-| `[MicroPython]`                | `Control ESP32`                                |
-| `[Python/PyGame/OpenCV]`       | `Track markers, game logic, create projection` |
-| `[Fusion/Blender/Illustrator]` | `[Prototyping structure]`                      |
-|                                |                                                |
+| Python | Main programming language for Raspberry Pi | 
+| Raspberry Pi OS | Operating system for Raspberry Pi | 
+| GPIO Library | Sensor and output device interfacing |
+| Bluetooth Communication | Sending alerts to connected mobile device |
+| GitHub | Project documentation and version control |
 
 ## 8.2 Software Logic/Algorithm
 
-Describe what the code must do.
+- **Startup behavior:** The Raspberry Pi initializes GPIO pins, sensors, Bluetooth communication, and output devices such as the buzzer or vibration motor.
+-  **Input handling:** The system continuously receives input from the ultrasonic sensor, IR sensor, touch sensor, and DHT11 sensor.
+  -  **Sensor reading:** The ultrasonic sensor measures obstacle distance, the IR sensor detects pits or stairs, and the DHT11 sensor monitors environmental conditions.
+  -   **Decision logic:** The Raspberry Pi analyzes sensor data to determine whether obstacles or unsafe conditions are present. If danger is detected within a threshold range, the system activates warning alerts.
+  -    **Output behavior:** The buzzer or vibration motor alerts the user whenever an obstacle, pit, or unsafe condition is detected.
+  -  **Communication logic:** The Bluetooth module sends emergency notifications or alert messages to a connected mobile device when the emergency touch sensor is activated.
+  -   **Reset behavior:** The system continuously repeats sensor monitoring and automatically resets alerts once the danger condition is cleared.
 
-Include:
-
-- startup behavior,
-- input handling,
-- sensor reading,
-- decision logic,
-- output behavior,
-- communication logic,
-- reset behavior.
-
-**Response:**  
-`
-
-- **Sample Startup behavior:**  
-  The Raspi/FPGA initializes motor pins, PWM control, and starts a WiFi access point with a web server. The laptop initializes camera input, tracking system, and projection mapping.
-- **Input handling:**  
-  Movement commands are received from the laptop (pygame sends http requests)
-- **Sensor reading:**  
-  The camera continuously captures frames, and OpenCV detects ArUco markers to determine the car’s position and orientation.
-- **Decision logic:**  
-  The system maps the car’s position into a virtual coordinate system and checks for nearby obstacles or collisions. If movement is valid, the command is allowed; if not, it is blocked or replaced with a feedback action (like a slight shake).
-- **Output behavior:**  
-  The ESP32 drives the motors using PWM signals to control speed and direction. The projector displays the updated game environment, including obstacles, targets, and feedback visuals.
-- **Communication logic:**  
-  The laptop sends HTTP requests (e.g., `/forward`, `/left`) to the ESP32 over WiFi. The ESP32 parses these commands and executes motor actions.
-- **Reset behavior:**  
-  If no command is received within a short timeout, the ESP32 stops the motors. The game resets when a level is completed or restarted.`
-
+    
 ## 8.3 Code Flowchart
 
 Insert a flowchart showing your code logic.
