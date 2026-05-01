@@ -66,7 +66,7 @@ By the final review, this README should clearly show:
 | `Tanaya Balki`        | `[Electronics / Coding / App ]` | `Documentation`  | `Documentation,Raspberry Pi `|
 | `Tushar Parmar`       | `[Electronics / Fabrication]`   | `[Coding]`       | `Material Handling, Hardware`    |
 | `Om Rajbhar`          | `[Electronics / Fabrication]`   | `[Coding]`       | `Material Handling, Hardware`    |
-| `Siddhai Thalkar`     | `[Electronics / Fabrication]`   | `[Coding]`       | `Material Handling, Hardware`    |
+| `Siddhai Thalkar`     | `[Electronics / Fabrication]`   | `[Coding]`       | `Documentation,Raspberry Pi`    |
 
 ## 1.3 Project Title
 
@@ -95,7 +95,7 @@ List what inspired the project.
 | Source Type | Title / Link                                                        | What Inspired You                                                                         |
 | ----------- | ------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
 | `[Video]`   | `https://www.instagram.com/reel/DSVh31YE3gc/?igsh=Y2xtbG96aXF4dHYz` | `Understanding how technology can create interactive and practical real-world assistance systems` |
-|             |                                                                     |                                                                                           |
+|    `[Research / Existing Concepts]`           | 	`An_Intelligent_and_Multi-Functional_Stick_for_Blind_People_Using_IoT` | `The idea of combining IoT technology, sensors, and embedded systems to improve safety and independence for visually impaired individuals inspired our project.` |
 |             |                                                                     |                                                                                           |
 
 ## 2.2 Original Twist
@@ -180,21 +180,42 @@ Check all that apply.
 
 ## 5.2 High-Level System Description
 
-Explain how the system works in simple terms.
 
-Include:
+Input
 
-- input,
-- processing,
-- output,
-- physical structure,
-- app interaction if any.
+The system receives input from:
+Ultrasonic sensor for obstacle detection
+IR sensor for detecting pits, holes, or stairs
+Touch sensor for emergency activation
+DHT11 sensor for environmental monitoring
+Processing
 
-**Response:**  
+All sensor data is processed by the Arduino microcontroller. The controller continuously analyzes distance and ground-condition data to determine possible danger situations.
+
+Output
+
+When obstacles or unsafe conditions are detected:
+A buzzer or vibration motor alerts the user
+Bluetooth module can send emergency notifications to a connected mobile device
+Physical Structure
+
+The sensors and electronics are mounted onto a walking stick structure in a compact and portable arrangement. The design is lightweight and easy to carry.
+
+App Interaction
+
+The Bluetooth module allows communication with a mobile application or smartphone for emergency alert features and future smart integrations.
 
 ## 5.3 Input / Output Map
-
-| System Part                              | Type            | What It Does                                                               |
+   
+| System Part              | Type          | What It Does                            |
+|--------------------------|---------------|------------------------------------------|
+| Ultrasonic Sensor        | Input         | Detects nearby obstacles                 |
+| IR Sensor                | Input         | Detects pits, stairs, or ground changes  |
+| Touch Sensor             | Input         | Triggers emergency alert                 |
+| DHT11 Sensor             | Input         | Measures temperature/environment         |
+| Raspberry Pi             | Processing    | Processes all sensor data                |
+| Buzzer / Vibration Motor | Output        | Alerts the user about danger             |
+| Bluetooth Module         | Communication | Sends alerts to connected device         |
 
 
 ---
