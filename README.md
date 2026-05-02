@@ -608,21 +608,32 @@ Suggested images:
 
 Describe the final version of your project.
 
-**Response:**  
+The final version of our Smart Blind Stick is an embedded assistive system designed to improve safety and independence for visually impaired individuals. The system uses a Raspberry Pi along with multiple sensors to detect obstacles, pits, and unsafe walking conditions in real time.
 
+The ultrasonic sensor detects nearby obstacles, while the IR sensor identifies pits or holes in the walking path. Instead of using a buzzer, the system provides real-time voice feedback through Bluetooth audio devices. A touch sensor acts as an emergency trigger; when tapped three times, the system sends an SOS alert containing location and temperature information to the caregiver through Telegram. The DHT11 sensor continuously monitors environmental temperature, which is included in emergency alerts.
+
+The project combines embedded systems, sensor integration, Bluetooth communication, and internet-based alert systems into a compact and practical assistive device.
 
 ## 17.2 What Works Well
-
-
+- Accurate obstacle detection using the ultrasonic sensor
+- Pit and hole detection using the IR sensor
+- Real-time Bluetooth voice alerts
+- SOS emergency alert through Telegram
+- Temperature monitoring integration
+- Smooth sensor communication with Raspberry Pi
 
 ## 17.3 What Still Needs Improvement
-
+- Improve obstacle detection range and accuracy
+- Add waterproof protection for outdoor use
+- Add GPS module for more accurate live location tracking
+- Develop a dedicated mobile application interface
+- Improve voice feedback quality and multilingual support
 
 ## 17.4 What Changed From the Original Plan
 
 How did the project change from the initial idea?
 
-**Response:**  
+Initially, the project planned to use a buzzer-based alert system for obstacle warnings. During development, we replaced the buzzer with Bluetooth-based voice feedback to make the alerts clearer and more user-friendly for visually impaired users.
 
 
 ---
@@ -635,44 +646,37 @@ What did your team do well?
 What slowed you down?  
 How well did you manage time, tasks, and responsibilities?
 
-**Response:**  
+Our team worked well in dividing responsibilities between project setup and documentation. Good communication and collaboration helped us complete sensor integration and troubleshooting efficiently.
 
+The main challenges were sensor calibration, stable Bluetooth communication, and integrating Telegram alerts with the Raspberry Pi. Hardware testing and debugging took more time than expected.
+
+Overall, we managed tasks and responsibilities effectively by continuously testing modules individually before integrating the full system.
 
 ## 18.2 Technical Reflection
 
-What did you learn about:
+We learned:
 
-- electronics,
-- coding,
-- mechanisms,
-- fabrication,
-- integration?
+How to interface multiple sensors with Raspberry Pi
+GPIO programming and sensor communication
+Bluetooth and Telegram API integration
+Real-time sensor data processing
+Power management and hardware troubleshooting
+Importance of testing and calibration in embedded systems
 
-**Response:**  
-
+We also improved our understanding of integrating hardware and software into one complete assistive system.
 
 ## 18.3 Design Reflection
 
-What did you learn about:
+We learned the importance of designing systems that are simple, practical, and user-friendly. Since the project is meant for visually impaired users, clarity and ease of interaction were very important.
 
-- designing ,
-- delight,
-- clarity,
-- physical interaction,
-- understanding,
-- iteration?
-
-**Response:**  
+We understood how small design improvements such as replacing buzzers with voice alerts can significantly improve usability and user comfort. Iterative testing helped us refine the placement of sensors and improve overall system reliability.
 
 
 ## 18.4 If You Had One More hour
 
 What would you improve next?
-
-**Response:**  
-
-` `
-
+- Improve the compactness of the hardware setup
+- Develop a mobile application dashboard
 ---
 
 # 19. Final Submission Checklist
