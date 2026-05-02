@@ -288,9 +288,7 @@ The Raspberry Pi acts as the central controller and is connected to all sensors 
 
 Insert a hand-drawn or software-made circuit diagram.
 
-**Insert image below:**  
-`[Upload image and link here]`
-<img width="867" height="1156" alt="" src="" />
+<img src="images/block diagram.jpg" width="867" height="1156" alt="" src="" />
 
 
 # 7.4. Power Plan
@@ -535,12 +533,11 @@ The biggest uncertainty in the project is the reliability of Bluetooth communica
 | What Needs Testing     | How You Will Test It                                                                 | Success Condition                                                                                    |
 | ---------------------- | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------- |
 | `[Wifi connection]`    | `[Check if motor spins via app button]`                                              | `[Both motors accurately respond to wifi signals]`                                                   |
-                       |
 ## 14.2 Testing and Debugging Log
 
-| Date          | Problem Found                         | Type         | What You Tried                                | Result               | Next Action                                    |
-| ------------- | ------------------------------------- | ------------ | --------------------------------------------- | -------------------- | ---------------------------------------------- |
-| `18th April`  | `Car not balancing properly`          | `Mechanical` | `Add low-friction caster support to one side` | `Worked`             | `improve caster structure`                     |
+| Date         | Problem Found                              | Type        | What You Tried                                      | Result        | Next Action                                  |
+|--------------|--------------------------------------------|------------|-----------------------------------------------------|--------------|----------------------------------------------|
+| 30 April   | SOS not triggering consistently            | Hardware   | Checked touch sensor connections                    | Fixed        | Secure connections properly                  |
 
 
 ## 14.3 Playtesting Notes
@@ -569,21 +566,25 @@ Include:
 - revisions.
 
 **Response:**  
-`The fabrication process involved designing, manufacturing, assembling, and refining both the physical structure and electronic integration of the system.`
+The fabrication process involved assembling the physical structure of the smart blind stick and integrating all electronic components properly.
 
-`Design (CAD Modeling):
-The initial model was created using CAD software, where components were designed based on the actual dimensions of the electronic parts. This ensured accurate fitting and minimized errors during assembly.
-Cutting (Laser Cutting):
-The designed parts were fabricated using laser cutting techniques. Sheets were cut precisely according to the CAD model to create the structural base and mounts for components.`
+**Design and Planning:**  
+The layout of sensors and components was first planned to ensure proper placement on the stick. The positions were chosen so that obstacle detection is accurate and the touch sensor is easily accessible.
 
-`Components were fixed using adhesives and mechanical supports. Certain parts were intentionally kept modular (not permanently fixed) to allow easy replacement and modification of electronics.
-Surface Finishing:
-Some parts were sanded to smooth rough edges after cutting. Sawdust mixed with adhesive was used to fill gaps and uneven edges, improving structural finish. The final structure was then painted for better aesthetics and durability.`
+**Assembly:**  
+All components such as the Raspberry Pi, sensors, and battery pack were mounted onto the stick using basic supports and fastening methods. Care was taken to keep the system compact and lightweight.
 
-`Environment Setup (Dark Room Fabrication):
-To enhance projection visibility, a controlled dark environment was created using Z-boards, paper sheets, and bedsheets. This minimized external light interference and improved projection clarity.
-Revisions and Iterations:
-Multiple adjustments were made throughout the process, including refining alignment, improving structural stability, repositioning components, and optimizing the interaction between the physical car and projected environment.`
+**Wiring:**  
+Connections between sensors and the Raspberry Pi were made using jumper wires. Proper routing was done to avoid loose connections and ensure stability during use.
+
+**Mounting:**  
+Sensors like the ultrasonic and IR sensor were fixed at suitable angles to detect obstacles effectively. The touch sensor was placed where the user can easily access it.
+
+**Power Setup:**  
+A portable battery pack was connected to power the system, making it suitable for real-world use.
+
+**Finishing:**  
+The structure was checked for stability and comfort. Loose wires were secured, and the system was adjusted to ensure ease of handling.
 
 ## 16 Build Photos
 
