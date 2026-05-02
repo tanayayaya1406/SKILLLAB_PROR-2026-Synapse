@@ -80,7 +80,7 @@ By the final review, this README should clearly show:
 
 ## 1.5 Expanded Project Idea
 
-The Smart Blind Stick is an embedded systems project developed to assist visually impaired individuals in navigating their surroundings safely and independently. The system uses multiple sensors such as ultrasonic and IR sensors to detect nearby obstacles, pits, or stairs and alert the user through buzzer or vibration feedback.
+The Smart Blind Stick is an embedded systems project developed to assist visually impaired individuals in navigating their surroundings safely and independently. The system uses multiple sensors such as ultrasonic and IR sensors to detect nearby obstacles, pits, or stairs and alert the user through buzzing sound on the mobile phone.
 
 The project combines embedded electronics, sensor integration, and wireless communication technologies to create a safer mobility solution. Additional features like emergency alert triggering and Bluetooth-based communication enhance the usability of the stick. The aim of the project is to provide an affordable, practical, and user-friendly assistive device using modern embedded system concepts.
 
@@ -195,7 +195,7 @@ All sensor data is processed by the Arduino microcontroller. The controller cont
 Output
 
 When obstacles or unsafe conditions are detected:
-A buzzer or vibration motor alerts the user
+A buzzing sound alerts the user through mobile phone
 Bluetooth module can send emergency notifications to a connected mobile device
 Physical Structure
 
@@ -214,7 +214,7 @@ The Bluetooth module allows communication with a mobile application or smartphon
 | Touch Sensor             | Input         | Triggers emergency alert                 |
 | DHT11 Sensor             | Input         | Measures temperature/environment         |
 | Raspberry Pi             | Processing    | Processes all sensor data                |
-| Buzzer / Vibration Motor | Output        | Alerts the user about danger             |
+| Buzzing sound            | Output        | Alerts the user about danger on phone            |
 | Bluetooth Module         | Communication | Sends alerts to connected device         |
 
 
@@ -274,13 +274,12 @@ Add a sketch with labels showing:
 | DHT11 Sensor | `1` | Measures environmental temperature | 
 | Touch Sensor | `1` | Triggers emergency alert | 
 | Bluetooth Module (HC-05) | `1` | Sends alerts to connected device |
-| Buzzer / Vibration Motor | `1` | Provides warning alerts to user | 
 | Battery Pack | `1` | Powers the complete system | 
 | Jumper Wires | `Multiple` | Electrical connections between components |
 
 ## 7.2 Wiring Plan
 
-The Raspberry Pi acts as the central controller and is connected to all sensors and output devices through GPIO pins. The ultrasonic sensor is connected for obstacle detection using trigger and echo pins. The IR sensor is connected to detect pits, stairs, or sudden ground changes. The DHT11 sensor is connected to monitor environmental conditions, while the touch sensor is used to activate emergency alerts manually. The buzzer or vibration motor is connected to output pins to provide warning feedback to the user whenever danger is detected. The Bluetooth module is connected through UART communication pins to send emergency notifications or alerts to a connected mobile device. 
+The Raspberry Pi acts as the central controller and is connected to all sensors and output devices through GPIO pins. The ultrasonic sensor is connected for obstacle detection using trigger and echo pins. The IR sensor is connected to detect pits, stairs, or sudden ground changes. The DHT11 sensor is connected to monitor environmental conditions, while the touch sensor is used to activate emergency alerts manually. A buzzing sound is provided on mobile phone to provide warning feedback to the user whenever danger is detected. The Bluetooth module is connected through UART communication pins to send emergency notifications or alerts to a connected mobile device. 
 
 ---
 
@@ -319,7 +318,7 @@ Insert a hand-drawn or software-made circuit diagram.
 -  **Input handling:** The system continuously receives input from the ultrasonic sensor, IR sensor, touch sensor, and DHT11 sensor.
   -  **Sensor reading:** The ultrasonic sensor measures obstacle distance, the IR sensor detects pits or stairs, and the DHT11 sensor monitors environmental conditions.
   -   **Decision logic:** The Raspberry Pi analyzes sensor data to determine whether obstacles or unsafe conditions are present. If danger is detected within a threshold range, the system activates warning alerts.
-  -    **Output behavior:** The buzzer or vibration motor alerts the user whenever an obstacle, pit, or unsafe condition is detected.
+  -    **Output behavior:** The buzzing sound alerts the user whenever an obstacle, pit, or unsafe condition is detected.
   -  **Communication logic:** The Bluetooth module sends emergency notifications or alert messages to a connected mobile device when the emergency touch sensor is activated.
   -   **Reset behavior:** The system continuously repeats sensor monitoring and automatically resets alerts once the danger condition is cleared.
 
@@ -371,7 +370,7 @@ Explain why you selected your main materials and components.
 The Raspberry Pi is used because it can handle multiple sensors and supports Bluetooth communication.  
 The ultrasonic sensor is used for long-range obstacle detection, while the IR sensor detects nearby objects. This combination improves accuracy.  
 The touch sensor is easy to use and allows quick SOS triggering.  
-The buzzer or vibration motor gives immediate feedback to the user.  
+The buzzing sound gives immediate feedback to the user.  
 The DHT11 sensor is added for environmental monitoring and future improvements.  
 A battery pack is used to make the system portable.
 
@@ -382,7 +381,6 @@ A battery pack is used to make the system portable.
 |------|------------|----------------|------------------|--------|
 | Ultrasonic Sensor | Detect obstacles at a distance | Already available | Before testing | Received |
 | DHT11 Sensor | Measure temperature and humidity | Already available | Before testing | Received |
-| Buzzer / Vibration Motor | To alert user | Already available | Before testing | Received |
 | Battery Pack | Power supply | Local store | Before final assembly | Received |
 | Stick Structure | Mounting components | Already available | Before integration | Received |
 
@@ -498,8 +496,8 @@ Expected outcomes:
 | Days  | Planned Goal                          | What Actually Happened                                  | What Changed                                  | Next Steps                              |
 |-------|---------------------------------------|----------------------------------------------------------|-----------------------------------------------|------------------------------------------|
 | Day 1 | Finalize idea and components          | Idea finalized, sensors identified                       |Added temperature sensor        | Start sensor testing                     |
-| Day 1 | Sensor interfacing                    | Ultrasonic, IR, touch sensors tested                     | Added buzzer for feedback                      | Begin Bluetooth setup                    |
-| Day 1 | Integration                          | Sensors + buzzer + Bluetooth working together            | Focus shifted to SOS-only messaging            | Test full system                         |
+| Day 1 | Sensor interfacing                    | Ultrasonic, IR, touch sensors tested                     | Added buzzing sound for alertsd                 | Begin Bluetooth setup                    |
+| Day 1 | Integration                          | Sensors + Bluetooth working together            | Focus shifted to SOS-only messaging            | Test full system                         |
 | Day 1 | Testing             | System tested, documentation started          | Simplified messaging     | Continued with documentation           |
 
 
@@ -598,7 +596,7 @@ Suggested images:
 - mechanism test,
 - app screenshot,
 - final build.
-- <img width="960" height="1280" alt="WhatsApp Image 2026-04-24 at 9 46 02 AM (1)" src="https://github.com/user-attachments/assets/74baa570-5770-483e-be6d-d2f03386e37c" />
+<img width="960" height="1280" src="images/circuit_test.jpeg" />
 
 
 
