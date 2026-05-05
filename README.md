@@ -72,7 +72,7 @@ By the final review, this README should clearly show:
 
 `"Smart Blind Stick"`
 
-<img width="1600" height="1131" alt="image" src="https://github.com/user-attachments/assets/c64bfbd4-b3b7-43d9-83ad-c203a5aa11bc" />
+<img src="images/titlefinal.png" width="867" height="1156" alt="" src="" />
 
 ## 1.4 One-Line Pitch
 
@@ -597,7 +597,8 @@ Suggested images:
 - app screenshot,
 - final build.
 <img width="960" height="1280" src="images/circuit_test.jpeg" />
-
+<img src="images/sos_telegram.jpeg" width="867" height="1156" alt="" src="" />
+<img src="images/final_connection.jpeg" width="867" height="1156" alt="" src="" />
 
 
 
@@ -692,7 +693,7 @@ Before submission, confirm that:
 - [x] Budget summary is complete
 - [x] Mechanical planning is documented if applicable
 - [ ] App planning is documented if applicable
-- [x] Code flowchart is added
+- [ ] Code flowchart is added
 - [x] Task breakdown is complete
 - [x] Weekly logs are updated
 - [x] Risk register is complete
